@@ -80,6 +80,8 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\View\Guest\Login.aspx" />
+    <Content Include="Frontend\View\Guest\Register.aspx" />
+    <Content Include="Frontend\View\Template\style.css" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
@@ -99,18 +101,35 @@
     <Compile Include="Artist.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Controller\AuthController.cs" />
+    <Compile Include="Backend\Controller\CustomerController.cs" />
+    <Compile Include="Backend\Facade\Facade.cs" />
+    <Compile Include="Backend\Factory\CustomerFactory.cs" />
+    <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
+    <Compile Include="Backend\Handler\CustomerHandler.cs" />
+    <Compile Include="Backend\Repository\Database.cs" />
+    <Compile Include="Backend\Repository\CustomerRepository.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Facade\Redirect.cs" />
+    <Compile Include="Frontend\Facade\AuthSession.cs" />
     <Compile Include="Frontend\View\Guest\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Frontend\View\Guest\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Frontend\View\Template\Template.Master.cs">
       <DependentUpon>Template.Master</DependentUpon>
@@ -160,7 +179,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Backend\" />
     <Folder Include="Frontend\View\Admin\" />
     <Folder Include="Frontend\View\Customer\" />
   </ItemGroup>

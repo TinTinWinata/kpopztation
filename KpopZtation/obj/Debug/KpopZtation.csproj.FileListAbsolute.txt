@@ -123,3 +123,4 @@ E:\Github\kpopztation\KpopZtation\bin\Microsoft.CodeDom.Providers.DotNetCompiler
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.CopyComplete
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.dll
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.pdb
+E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.AssemblyReference.cache
