@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Backend\Controller\AuthController.cs" />
     <Compile Include="Backend\Controller\CustomerController.cs" />
+    <Compile Include="Backend\Facade\Data.cs" />
     <Compile Include="Backend\Facade\Facade.cs" />
     <Compile Include="Backend\Factory\CustomerFactory.cs" />
     <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Facade\Data.cs" />
     <Compile Include="Frontend\Facade\Redirect.cs" />
     <Compile Include="Frontend\Facade\AuthSession.cs" />
     <Compile Include="Frontend\View\Guest\Login.aspx.cs">

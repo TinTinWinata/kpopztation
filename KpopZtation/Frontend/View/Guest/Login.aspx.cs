@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Backend.Controller;
+using KpopZtation.Backend.Facade;
 using KpopZtation.Frontend.Facade;
 
 namespace KpopZtation.Frontend.View.Guest
@@ -21,14 +22,10 @@ namespace KpopZtation.Frontend.View.Guest
             string Email = emailInput.Text;
             string Password = passwordInput.Text;
 
-            Customer Object = AuthController.Login(Email, Password);
+            Data<Customer> BackendData = AuthController.Login(Email, Password);
 
-            if(Object == null)
-            {
-                ErrorLabel.Text = "User Not Found!";
-            }
-            
-            AuthSession.SetUser(Session, Object);
+
+            AuthSession.SetUser(Session, BackendData.Object);
             //Session[]
         }
     }

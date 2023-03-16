@@ -8,7 +8,6 @@ namespace KpopZtation.Frontend.Facade
 {
     public class AuthSession
     {
-
         public static string USER_KEY = "user";
         public static void SetUser(HttpSessionState Session, Customer Object)
         {

@@ -10,13 +10,13 @@ namespace KpopZtation.Backend.Controller
 {
     public class AuthController
     {
-        public static Customer Login(string Email, string Password) {
+        public static Data<Customer> Login(string Email, string Password) {
             Customer Object = CustomerHandler.FindByEmail(Email);
             if(Object != null && Object.CustomerPassword == Password)
             {
-                return Object;
+                return new Data<Customer>("Succesfully Login!", Object, true);
             }
-            return null;
+            return new Data<Customer>("Wrong credentials or User not found!", Object, false);
         }
 
         public static bool IsExistEmail(string Email)
@@ -32,7 +32,7 @@ namespace KpopZtation.Backend.Controller
             }
         }
 
-        public static string Register(string Name, string Email, string Gender, string Address, string Password)
+        public static Data<Customer> Register(string Name, string Email, string Gender, string Address, string Password)
         {
             string Error = string.Empty;
 
@@ -69,18 +69,19 @@ namespace KpopZtation.Backend.Controller
 
 
             Customer Object = CustomerHandler.CreateCustomer(Name, Email, Password, Gender, Address);
+
             if(Object == null)
             {
-                Error = "Customer is failed to create";    
+                Error = "Customer is failed to create";
             }
 
 
             if (Error != string.Empty)
             {
-                return Error;
+                return new Data<Customer>(Error, Object, false);
             }
 
-            return string.Empty;
+            return new Data<Customer>("Succesfully register New User!", Object, true);
         }
     }
 }
