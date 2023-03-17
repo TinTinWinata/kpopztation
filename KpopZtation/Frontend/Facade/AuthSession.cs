@@ -13,9 +13,13 @@ namespace KpopZtation.Frontend.Facade
         {
             Session[USER_KEY] = Object;         
         }
-        public static Customer User(HttpSessionState Session)
+        public static Customer GetUser(HttpSessionState Session)
         {
             return (Customer) Session[USER_KEY];
+        }
+        public static bool IsLoggedIn(HttpSessionState Session)
+        {
+            return Session[USER_KEY] != null;
         }
     }
 }

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using KpopZtation.Backend.Controller;
-using KpopZtation.Backend.Facade;
 using KpopZtation.Frontend.Facade;
+using KpopZtation.Backend.Service;
 
 namespace KpopZtation.Frontend.View.Guest
 {
@@ -22,8 +21,8 @@ namespace KpopZtation.Frontend.View.Guest
             string Email = emailInput.Text;
             string Password = passwordInput.Text;
 
-            Data<Customer> BackendData = AuthController.Login(Email, Password);
-
+            string Result = Service.WSLogin(Email, Password);
+            Data<Customer> BackendData = Json.Decode<Data<Customer>>(Result);
 
             AuthSession.SetUser(Session, BackendData.Object);
             //Session[]

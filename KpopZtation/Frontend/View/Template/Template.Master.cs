@@ -11,10 +11,17 @@ namespace KpopZtation.Frontend.View.Template
     public partial class Template : System.Web.UI.MasterPage
     {
 
+        protected void CheckUser()
+        {
+            if (AuthSession.IsLoggedIn(Session))
+            {
+                UsernameLabel.Text = AuthSession.GetUser(Session).CustomerName;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CheckUser();
         }
 
         protected void homeBtn_Click(object sender, EventArgs e)

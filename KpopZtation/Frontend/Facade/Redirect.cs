@@ -8,7 +8,7 @@ namespace KpopZtation.Frontend.Facade
     public class Redirect
     {
         public static string BASE_PATH = "/Frontend/View";
-
+        public static string ASSET_PATH = "~/Assets/";
 
         public static string VALIDATE_URL(string URL)
         {

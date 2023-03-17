@@ -16,5 +16,6 @@ namespace KpopZtation.Backend.Facade
             this.Message = Message;
             this.Succeed = Succeed;
         }
+
     }
 }

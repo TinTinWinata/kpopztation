@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Backend.Controller;
 using KpopZtation.Backend.Facade;
+using KpopZtation.Backend.Service;
 
 namespace KpopZtation.Frontend.View.Guest
 {
@@ -24,7 +25,9 @@ namespace KpopZtation.Frontend.View.Guest
             string Name = NameInput.Text;
             string Email = EmailInput.Text;
 
-            Data<Customer> BackendData = AuthController.Register(Name, Email, Gender, Address, Password);
+            String Result = Service.WSRegister(Name, Email, Gender, Address, Password);
+            Data<Customer> BackendData = Json.Decode<Data<Customer>>(Result);
+
             if (BackendData.Succeed)
             {
                 // !Redirect to home

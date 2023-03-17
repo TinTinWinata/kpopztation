@@ -50,6 +50,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -79,6 +82,8 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
+    <Content Include="Frontend\View\Guest\Home.aspx" />
     <Content Include="Frontend\View\Guest\Login.aspx" />
     <Content Include="Frontend\View\Guest\Register.aspx" />
     <Content Include="Frontend\View\Template\style.css" />
@@ -101,15 +106,20 @@
     <Compile Include="Artist.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Controller\ArtistController.cs" />
     <Compile Include="Backend\Controller\AuthController.cs" />
     <Compile Include="Backend\Controller\CustomerController.cs" />
     <Compile Include="Backend\Facade\Data.cs" />
     <Compile Include="Backend\Facade\Facade.cs" />
+    <Compile Include="Backend\Facade\Json.cs" />
     <Compile Include="Backend\Factory\CustomerFactory.cs" />
+    <Compile Include="Backend\Handler\ArtistHandler.cs" />
     <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
     <Compile Include="Backend\Handler\CustomerHandler.cs" />
+    <Compile Include="Backend\Repository\ArtistRepository.cs" />
     <Compile Include="Backend\Repository\Database.cs" />
     <Compile Include="Backend\Repository\CustomerRepository.cs" />
+    <Compile Include="Backend\Service\Service.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -117,8 +127,23 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Frontend\Facade\Data.cs" />
+    <Compile Include="Frontend\Facade\Json.cs" />
     <Compile Include="Frontend\Facade\Redirect.cs" />
     <Compile Include="Frontend\Facade\AuthSession.cs" />
+    <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.cs">
+      <DependentUpon>ArtistInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.designer.cs">
+      <DependentUpon>ArtistInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\View\Guest\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,7 +206,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Frontend\View\Admin\" />
     <Folder Include="Frontend\View\Customer\" />
   </ItemGroup>
   <ItemGroup>

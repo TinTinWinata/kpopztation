@@ -123,7 +123,6 @@ E:\Github\kpopztation\KpopZtation\bin\Microsoft.CodeDom.Providers.DotNetCompiler
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.CopyComplete
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.dll
 E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.pdb
-E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.AssemblyReference.cache
 C:\github\kpopztation\KpopZtation\bin\KpopZtation.dll.config
 C:\github\kpopztation\KpopZtation\bin\KpopZtation.dll
 C:\github\kpopztation\KpopZtation\bin\KpopZtation.pdb
@@ -187,3 +186,5 @@ C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.CoreCompileInputs
 C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.CopyComplete
 C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.dll
 C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.pdb
+E:\Github\kpopztation\KpopZtation\bin\Newtonsoft.Json.dll
+E:\Github\kpopztation\KpopZtation\bin\Newtonsoft.Json.xml
