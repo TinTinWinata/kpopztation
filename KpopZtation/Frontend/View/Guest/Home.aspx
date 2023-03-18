@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button ID="InsertButton" OnClick="InsertButton_Click" runat="server" Text="Insert" />
     <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-50">
             <tr>
@@ -23,12 +24,12 @@
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
-           <%--             <div class="flex-shrink-0 h-10 w-10">
-                            <img class="h-10 w-10 rounded-full" src="" alt="">
-                        </div>--%>
+                        <div class="flex-shrink-0 h-10 w-10">
+                            <img class="h-10 w-10 rounded-full" src=" <%= Artist.ArtistImage %>" alt="">
+                        </div>
                         <div class="ml-4">
                             <div class="text-sm font-medium text-gray-900">
-                                <%Response.Write(Artist.ArtistName); %>
+                                <%= Artist.ArtistName %>
                             </div>
                         </div>
                     </div>
@@ -36,6 +37,9 @@
 
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Remove</a>
                 </td>
             </tr>
             <%} %>

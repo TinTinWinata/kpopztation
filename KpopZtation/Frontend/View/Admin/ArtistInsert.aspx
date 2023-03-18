@@ -47,10 +47,10 @@
       />
     </div>
     <asp:Label
-      CssClass="block text-sm font-medium text-gray-700"
+      CssClass="block text-sm font-medium text-red-400"
       ID="ErrorLabel"
       runat="server"
-      Text="Error"
+      Text=""
     ></asp:Label>
   </div>
 </asp:Content>

@@ -24,8 +24,17 @@ namespace KpopZtation.Frontend.View.Guest
             string Result = Service.WSLogin(Email, Password);
             Data<Customer> BackendData = Json.Decode<Data<Customer>>(Result);
 
-            AuthSession.SetUser(Session, BackendData.Object);
-            //Session[]
+
+            if (BackendData.Succeed)
+            {
+                AuthSession.SetUser(Session, BackendData.Object);
+                Redirect.REDIRECT_HOME(Response);
+                // Redirect to Home
+            }
+            else
+            {
+                ErrorLabel.Text = BackendData.Message;                
+            }
         }
     }
 }

@@ -188,3 +188,4 @@ C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.dll
 C:\github\kpopztation\KpopZtation\obj\Debug\KpopZtation.pdb
 E:\Github\kpopztation\KpopZtation\bin\Newtonsoft.Json.dll
 E:\Github\kpopztation\KpopZtation\bin\Newtonsoft.Json.xml
+E:\Github\kpopztation\KpopZtation\obj\Debug\KpopZtation.csproj.AssemblyReference.cache

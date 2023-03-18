@@ -18,10 +18,13 @@ namespace KpopZtation.Backend.Controller
 
 
 
-        public static Data<Artist> CreateArtist(string Username, FileUpload FileImage)
+        public static Data<Artist> CreateArtist(string Username, FileUpload FileImage, HttpServerUtility Server)
         {
+            string ImagePath = File.SaveFile(FileImage, Server);
 
-            new Data();
+            Artist Object = ArtistHandler.Create(Username, ImagePath);
+
+            return new Data<Artist>("Succesfully Create Artist!", Object, true);
         }
 
         public static Artist FindById(int id)

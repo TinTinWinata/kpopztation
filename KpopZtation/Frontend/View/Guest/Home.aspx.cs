@@ -23,5 +23,10 @@ namespace KpopZtation.Frontend.View.Guest
         {
             FetchArtist();
         }
+
+        public void InsertButton_Click(object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_INSERT_ARTIST(Response);
+        }
     }
 }

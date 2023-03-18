@@ -68,17 +68,18 @@ namespace KpopZtation.Backend.Controller
             }
 
 
-            Customer Object = CustomerHandler.CreateCustomer(Name, Email, Password, Gender, Address);
-
-            if(Object == null)
-            {
-                Error = "Customer is failed to create";
-            }
 
 
             if (Error != string.Empty)
             {
-                return new Data<Customer>(Error, Object, false);
+                return new Data<Customer>(Error, null, false);
+            }
+
+            Customer Object = CustomerHandler.CreateCustomer(Name, Email, Password, Gender, Address);
+
+            if (Object == null)
+            {
+                return new Data<Customer>("Customer failed to create!", null, false);
             }
 
             return new Data<Customer>("Succesfully register New User!", Object, true);

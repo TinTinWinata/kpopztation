@@ -24,6 +24,11 @@ namespace KpopZtation.Frontend.Facade
             Response.Redirect(BASE_PATH + ValidatedURL);
         }
 
+        public static void REDIRECT_INSERT_ARTIST(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Admin/ArtistInsert");
+        }
+
         public static void REDIRECT_HOME(HttpResponse Response)
         {
             REDIRECT(Response, "/Guest/Home");

@@ -89,8 +89,8 @@
     <Content Include="Frontend\View\Template\style.css" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -111,7 +111,9 @@
     <Compile Include="Backend\Controller\CustomerController.cs" />
     <Compile Include="Backend\Facade\Data.cs" />
     <Compile Include="Backend\Facade\Facade.cs" />
+    <Compile Include="Backend\Facade\File.cs" />
     <Compile Include="Backend\Facade\Json.cs" />
+    <Compile Include="Backend\Factory\ArtistFactory.cs" />
     <Compile Include="Backend\Factory\CustomerFactory.cs" />
     <Compile Include="Backend\Handler\ArtistHandler.cs" />
     <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
@@ -189,6 +191,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Frontend\View\Template\Template.Master" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -196,7 +199,6 @@
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Frontend\View\Template\Template.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -206,6 +208,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\" />
     <Folder Include="Frontend\View\Customer\" />
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Backend.Service;
 
 namespace KpopZtation.Frontend.View.Admin
 {
@@ -17,8 +18,9 @@ namespace KpopZtation.Frontend.View.Admin
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string ImagePath = Redirect.ASSET_PATH + FileImage.FileName;
-            FileImage.SaveAs(Server.MapPath(ImagePath));
+            string Result = Service.WSCreateArtist(NameInput.Text, FileImage, Server);
+            Data<Artist> BackendData = Json.Decode<Data<Artist>>(Result);
+            ErrorLabel.Text = BackendData.Message;
         }
     }
 }

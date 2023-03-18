@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using KpopZtation.Backend.Controller;
 using KpopZtation.Backend.Facade;
 
@@ -24,6 +25,11 @@ namespace KpopZtation.Backend.Service
         public static string WSGetArtistByID(int id)
         {
             return Json.Encode(ArtistController.FindById(id));
+        }
+
+        public static string WSCreateArtist(string Username, FileUpload FileImage, HttpServerUtility Server)
+        {
+            return Json.Encode(ArtistController.CreateArtist(Username, FileImage, Server));
         }
     }
 }

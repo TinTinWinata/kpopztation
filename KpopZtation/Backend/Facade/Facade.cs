@@ -9,7 +9,15 @@ namespace KpopZtation.Backend.Facade
     {
         public static bool CheckAlphanumeric(string Text)
         {
-            return Text.All(char.IsLetterOrDigit);
+            foreach (char c in Text)
+            {
+                if (!Char.IsLetterOrDigit(c))
+                {
+                    System.Diagnostics.Debug.WriteLine("[NOT ALPHANUMERIC] : " + c);
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
