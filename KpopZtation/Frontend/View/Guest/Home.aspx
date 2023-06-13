@@ -34,7 +34,6 @@
         <ItemTemplate>
             <tbody class="bg-white divide-y divide-gray-200">
                 <tr onclick="handleClick(this)" class="" data-artist-id='<%# Eval("ArtistID") %>'>
-                    <%--<asp:LinkButton OnClick="HandleClickItem" ID="detailBtn" runat="server" CommandArgument='<%#Eval("ArtistID") %>'>">
                     --%><td class="px-6 py-4 whitespace-nowrap">
                         <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10">
@@ -49,12 +48,12 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <a href="/Frontend/View/Guest/ArtistUpdate.aspx?id=<%#Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
+
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Remove</a>
+                        <a href="/Frontend/View/Guest/ArtistUpdate.aspx?id=<%# Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Remove</a>
                     </td>
-                    <%--</asp:LinkButton>--%>
                 </tr>
             </tbody>
         </ItemTemplate>
