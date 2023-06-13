@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="InsertButton" OnClick="InsertButton_Click" runat="server" Text="Insert" />
+    <asp:Button ID="InsertButton" CssClass="bg-red-300" OnClick="InsertButton_Click" runat="server" Text="Insert" />
     <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-50">
             <tr>

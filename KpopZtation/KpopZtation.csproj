@@ -121,6 +121,7 @@
     <Compile Include="Backend\Repository\ArtistRepository.cs" />
     <Compile Include="Backend\Repository\Database.cs" />
     <Compile Include="Backend\Repository\CustomerRepository.cs" />
+    <Compile Include="Backend\Service\CustomerService.cs" />
     <Compile Include="Backend\Service\Service.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -128,6 +129,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Facade\Cookie.cs" />
     <Compile Include="Frontend\Facade\Data.cs" />
     <Compile Include="Frontend\Facade\Json.cs" />
     <Compile Include="Frontend\Facade\Redirect.cs" />

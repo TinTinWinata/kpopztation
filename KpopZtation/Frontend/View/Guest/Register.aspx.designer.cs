@@ -78,13 +78,13 @@ namespace KpopZtation.Frontend.View.Guest
         protected global::System.Web.UI.WebControls.Label GenderLabel;
 
         /// <summary>
-        /// GenderInput control.
+        /// GenderInputRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GenderInput;
+        protected global::System.Web.UI.WebControls.RadioButtonList GenderInputRadioButtonList;
 
         /// <summary>
         /// AddressLabel control.

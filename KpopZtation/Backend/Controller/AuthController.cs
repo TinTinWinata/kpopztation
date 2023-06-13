@@ -62,7 +62,7 @@ namespace KpopZtation.Backend.Controller
             }else if(!Address.EndsWith("Street"))
             {
                 Error = "Address must ends with street";
-            }else if (Facade.Facade.CheckAlphanumeric(Password))
+            }else if (!Facade.Facade.CheckAlphanumeric(Password))
             {
                 Error = "Password must be alphanumeric!";
             }
