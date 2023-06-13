@@ -18,6 +18,7 @@ namespace KpopZtation.Frontend.Facade
             else
                 return URL;
         }
+
         public static void REDIRECT(HttpResponse Response, string URL)
         {
             string ValidatedURL = VALIDATE_URL(URL);

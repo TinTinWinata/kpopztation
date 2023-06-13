@@ -21,5 +21,10 @@ namespace KpopZtation.Frontend.Facade
         {
             return Session[USER_KEY] != null;
         }
+
+        public static void DeleteSession(HttpSessionState Session)
+        {
+            Session.Clear();
+        }
     }
 }

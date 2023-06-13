@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Backend.Controller;
-using KpopZtation.Backend.Facade;
 using KpopZtation.Backend.Service;
+using KpopZtation.Frontend.Facade;
 
 namespace KpopZtation.Frontend.View.Guest
 {
@@ -14,12 +14,12 @@ namespace KpopZtation.Frontend.View.Guest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (AuthSession.GetUser(Session) != null || Cookie.GetCookie(Request) != null) Redirect.REDIRECT_HOME(Response);
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string Gender = GenderInput.Text;
+            string Gender = GenderInputRadioButtonList.SelectedValue;
             string Address = AddressInput.Text;
             string Password = PasswordInput.Text;
             string Name = NameInput.Text;
@@ -31,6 +31,7 @@ namespace KpopZtation.Frontend.View.Guest
             if (BackendData.Succeed)
             {
                 // !Redirect to home
+                Redirect.REDIRECT_LOGIN(Response);
             }
             else
             {

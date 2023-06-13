@@ -44,11 +44,10 @@
                 <div class="mt-2">
                   <asp:Label CssClass="block text-sm font-medium text-gray-700" ID="GenderLabel" runat="server" Text="Gender"></asp:Label>
                   <div class="mt-1">
-                     <asp:TextBox 
-                         CssClass="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                         ID="GenderInput" 
-                         runat="server">
-                     </asp:TextBox>
+                    <asp:RadioButtonList ID="GenderInputRadioButtonList" runat="server">
+                         <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                         <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                    </asp:RadioButtonList>
                   </div>
                 </div>
 
