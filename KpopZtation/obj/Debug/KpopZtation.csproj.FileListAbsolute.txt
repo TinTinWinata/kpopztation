@@ -254,3 +254,5 @@ D:\Kuliah\PSD\kpopztation\KpopZtation\bin\roslyn\vbc.exe.config
 D:\Kuliah\PSD\kpopztation\KpopZtation\bin\roslyn\vbc.rsp
 D:\Kuliah\PSD\kpopztation\KpopZtation\bin\roslyn\VBCSCompiler.exe
 D:\Kuliah\PSD\kpopztation\KpopZtation\bin\roslyn\VBCSCompiler.exe.config
+C:\github\kpopztation\KpopZtation\bin\Newtonsoft.Json.dll
+C:\github\kpopztation\KpopZtation\bin\Newtonsoft.Json.xml

@@ -83,6 +83,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
+    <Content Include="Frontend\View\Guest\Detail.aspx" />
     <Content Include="Frontend\View\Guest\Home.aspx" />
     <Content Include="Frontend\View\Guest\Login.aspx" />
     <Content Include="Frontend\View\Guest\Register.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.designer.cs">
       <DependentUpon>ArtistInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Frontend\View\Guest\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

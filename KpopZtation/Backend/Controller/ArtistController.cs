@@ -27,9 +27,18 @@ namespace KpopZtation.Backend.Controller
             return new Data<Artist>("Succesfully Create Artist!", Object, true);
         }
 
-        public static Artist FindById(int id)
+        public static Data<Artist> FindById(string id)
         {
-            return ArtistHandler.FindById(id);
+            try
+            {
+                int integerId = int.Parse(id);
+                Artist Object =  ArtistHandler.FindById(integerId);
+                return new Data<Artist>("Succesfully Create Artist", Object, true);
+            }
+            catch (Exception err)
+            {
+                return new Data<Artist>(err.Message, null, true);
+            }
         }
     }
 }
