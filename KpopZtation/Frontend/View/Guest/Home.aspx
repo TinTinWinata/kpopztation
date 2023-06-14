@@ -48,11 +48,11 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="/Frontend/View/Guest/ArtistUpdate.aspx?id=<%#Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <a href="/Frontend/View/Admin/ArtistUpdate.aspx?id=<%#Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="/Frontend/View/Guest/ArtistUpdate.aspx?id=<%# Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Remove</a>
+                        <a href="/Frontend/View/Admin/ArtistUpdate.aspx?id=<%# Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Remove</a>
                     </td>
                 </tr>
             </tbody>
