@@ -82,6 +82,7 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="Frontend\View\Admin\AlbumInsert.aspx" />
     <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
     <Content Include="Frontend\View\Admin\ArtistUpdate.aspx" />
     <Content Include="Frontend\View\Guest\Detail.aspx" />
@@ -108,6 +109,7 @@
     <Compile Include="Artist.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Controller\AlbumController.cs" />
     <Compile Include="Backend\Controller\ArtistController.cs" />
     <Compile Include="Backend\Controller\AuthController.cs" />
     <Compile Include="Backend\Controller\CustomerController.cs" />
@@ -115,14 +117,18 @@
     <Compile Include="Backend\Facade\Facade.cs" />
     <Compile Include="Backend\Facade\File.cs" />
     <Compile Include="Backend\Facade\Json.cs" />
+    <Compile Include="Backend\Factory\AlbumFactory.cs" />
     <Compile Include="Backend\Factory\ArtistFactory.cs" />
     <Compile Include="Backend\Factory\CustomerFactory.cs" />
+    <Compile Include="Backend\Handler\AlbumHandler.cs" />
     <Compile Include="Backend\Handler\ArtistHandler.cs" />
     <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
     <Compile Include="Backend\Handler\CustomerHandler.cs" />
+    <Compile Include="Backend\Repository\AlbumRepository.cs" />
     <Compile Include="Backend\Repository\ArtistRepository.cs" />
     <Compile Include="Backend\Repository\Database.cs" />
     <Compile Include="Backend\Repository\CustomerRepository.cs" />
+    <Compile Include="Backend\Service\AlbumService.cs" />
     <Compile Include="Backend\Service\CustomerService.cs" />
     <Compile Include="Backend\Service\Service.cs" />
     <Compile Include="Cart.cs">
@@ -136,6 +142,13 @@
     <Compile Include="Frontend\Facade\Json.cs" />
     <Compile Include="Frontend\Facade\Redirect.cs" />
     <Compile Include="Frontend\Facade\AuthSession.cs" />
+    <Compile Include="Frontend\View\Admin\AlbumInsert.aspx.cs">
+      <DependentUpon>AlbumInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Admin\AlbumInsert.aspx.designer.cs">
+      <DependentUpon>AlbumInsert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.cs">
       <DependentUpon>ArtistInsert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

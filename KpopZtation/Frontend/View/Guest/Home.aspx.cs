@@ -12,6 +12,7 @@ namespace KpopZtation.Frontend.View.Guest
     public partial class Home : System.Web.UI.Page
     {
         public List<Artist> ArtistList = new List<Artist>();
+        public List<Album> AlbumList = new List<Album>();
 
         public void HandleClickItem(object sender, EventArgs e)
         {
@@ -31,6 +32,7 @@ namespace KpopZtation.Frontend.View.Guest
         {
             if (Page.IsPostBack == false)
             {
+                FetchAlbum();
                 FetchArtist();
             }
         }
@@ -38,6 +40,11 @@ namespace KpopZtation.Frontend.View.Guest
         public void InsertButton_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_INSERT_ARTIST(Response);
+        }
+
+        public void InsertAlbumButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Frontend/View/Admin/AlbumInsert.aspx?id=" + 1);
         }
     }
 }
