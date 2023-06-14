@@ -16,11 +16,6 @@ namespace KpopZtation.Backend.Controller
             return ArtistHandler.GetArtists();
         }
 
-        //public static Data<Artist> IsValidInput(string Username, FileUpload FileImage, HttpServerUtility Server)
-        //{
-            // To Do Make
-        //}  
-
         public static Data<Artist> CreateArtist(string Username, FileUpload FileImage, HttpServerUtility Server)
         {
             string ImagePath = File.SaveFile(FileImage, Server);

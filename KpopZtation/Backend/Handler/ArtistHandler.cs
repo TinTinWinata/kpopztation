@@ -22,5 +22,15 @@ namespace KpopZtation.Backend.Handler
         {
             return ArtistRepository.FindById(id);
         }
+
+        public static Artist FindByName(string Username)
+        {
+            return ArtistRepository.FindByName(Username);
+        }
+
+        public static Artist Update(int ID, string Username, string ImagePath)
+        {
+            return ArtistRepository.Update(ID, Username, ImagePath);
+        }
     }
 }

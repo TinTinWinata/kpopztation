@@ -21,8 +21,8 @@ namespace KpopZtation.Frontend.View.Guest
 
         private void FetchArtist()
         {
-            string id = Request.QueryString["id"];
-            string Result = Service.WSGetArtistByID(id);
+            string ID = Request.QueryString["id"];
+            string Result = Service.WSGetArtistByID(ID);
             Artist = Json.Decode<Artist>(Result);
         }
     }
