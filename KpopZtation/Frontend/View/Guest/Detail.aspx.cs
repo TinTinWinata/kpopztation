@@ -12,7 +12,7 @@ namespace KpopZtation.Frontend.View.Guest
     public partial class Detail : System.Web.UI.Page
     {
 
-        public Artist Artist;
+        Artist Artist;
 
         protected void Page_Load(object sender, EventArgs e)
         {
