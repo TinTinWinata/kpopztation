@@ -20,6 +20,18 @@ namespace KpopZtation.Backend.Repository
             return CustomerFactory.CreateCustomer(Name, Email, Password, Gender, Address);
         }
 
+        public static Customer UpdateCustomer(string ID, string Name, string Email, string Password, string Gender, string Address)
+        {
+            Customer Object = FindById(int.Parse(ID));
+            Object.CustomerName = Name;
+            Object.CustomerEmail = Email;
+            Object.CustomerPassword = Password;
+            Object.CustomerGender = Gender;
+            Object.CustomerAddress = Address;
+            db.SaveChanges();
+            return Object;
+        }
+
         public static Customer CreateAdmin(string Name, string Email, string Password, string Gender, string Address)
         {
             return CustomerFactory.CreateAdmin(Name, Email, Password, Gender, Address);

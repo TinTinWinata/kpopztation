@@ -13,6 +13,10 @@ namespace KpopZtation.Backend.Handler
             return CustomerRepository.CreateCustomer(Name, Email, Password, Gender, Address);
         }
 
+        public static Customer UpdateCustomer(string ID, string Name, string Email, string Password, string Gender, string Address)
+        {
+            return CustomerRepository.UpdateCustomer(ID, Name, Email, Password, Gender, Address);
+        }
         public static Customer CreateAdmin(string Name, string Email, string Password, string Gender, string Address)
         {
             return CustomerRepository.CreateAdmin(Name, Email, Password, Gender, Address);

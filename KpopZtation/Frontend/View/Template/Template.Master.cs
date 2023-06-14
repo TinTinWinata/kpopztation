@@ -59,5 +59,10 @@ namespace KpopZtation.Frontend.View.Template
 
             Redirect.REDIRECT_LOGIN(Response);
         }
+
+        protected void Profile_Click(object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_PROFILE(Response);
+        }
     }
 }

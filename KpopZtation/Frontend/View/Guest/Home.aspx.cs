@@ -28,11 +28,25 @@ namespace KpopZtation.Frontend.View.Guest
             ArtistRepeater.DataBind();
         }
 
+        public void HandleDeleteBtn(object sender, EventArgs e)
+        {
+            string ID = ((LinkButton)sender).CommandArgument.ToString();
+            string Result = Service.WSRemoveArtist(ID);
+            Data<Artist> BackendData = Json.Decode<Data<Artist>>(Result);
+            if (BackendData.Succeed)
+            {
+                FetchArtist();
+            }
+            else
+            {
+                ErrorLabel.Text = BackendData.Message;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack == false)
             {
-                FetchAlbum();
                 FetchArtist();
             }
         }

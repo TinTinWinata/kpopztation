@@ -85,6 +85,7 @@
     <Content Include="Frontend\View\Admin\AlbumInsert.aspx" />
     <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
     <Content Include="Frontend\View\Admin\ArtistUpdate.aspx" />
+    <Content Include="Frontend\View\Client\Profile.aspx" />
     <Content Include="Frontend\View\Guest\Detail.aspx" />
     <Content Include="Frontend\View\Guest\Home.aspx" />
     <Content Include="Frontend\View\Guest\Login.aspx" />
@@ -163,6 +164,13 @@
     <Compile Include="Frontend\View\Admin\ArtistUpdate.aspx.designer.cs">
       <DependentUpon>ArtistUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\View\Client\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Client\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\View\Guest\Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,7 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Frontend\View\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -13,6 +13,11 @@ namespace KpopZtation.Backend.Handler
             return ArtistRepository.GetArtists();
         }
 
+        public static Artist Remove(int ID)
+        {
+            return ArtistRepository.Remove(ID);
+        }
+
         public static Artist Create(string Username, string ImagePath)
         {
             return ArtistRepository.Create(Username, ImagePath);
