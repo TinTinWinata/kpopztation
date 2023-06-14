@@ -26,6 +26,16 @@ namespace KpopZtation.Backend.Handler
             return CustomerRepository.FindByEmail(Email);
         }
 
+        public static Customer DeleteCustomer(int ID)
+        {
+            return CustomerRepository.DeleteCustomer(ID);
+        }
+
+        public static List<Customer> GetAllCustomer()
+        {
+            return CustomerRepository.GetCustomers();
+        }
+
         public static Customer FindById(int id)
         {
             return CustomerRepository.FindById(id);

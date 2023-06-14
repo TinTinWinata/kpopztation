@@ -72,8 +72,16 @@
                 OnClick="SubmitButton_Click"
                 ID="SubmitButton"
                 runat="server"
-                Text="Insert Album"
+                Text="Update Profile"
                 CssClass="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" />
+
+              <asp:Button
+                OnClick="Delete_Click"
+                ID="Button1"
+                runat="server"
+                Text="Delete Account"
+                CssClass="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" />
+
         </div>
         <asp:Label CssClass="block text-sm font-medium text-red-400" ID="ErrorLabel" runat="server" Text=""></asp:Label>
     </div>

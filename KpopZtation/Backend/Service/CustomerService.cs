@@ -18,5 +18,15 @@ namespace KpopZtation.Backend.Service
         {
             return Json.Encode(CustomerController.Update(ID, Name, Email, Gender, Address, Password));
         }
+
+        public static string WSGetCustomers()
+        {
+            return Json.Encode(CustomerController.GetAllCustomer());
+        }
+
+        public static string WsDeleteCustomer(string ID)
+        {
+            return Json.Encode(CustomerController.DeleteCustomer(ID));
+        }
     }
 }

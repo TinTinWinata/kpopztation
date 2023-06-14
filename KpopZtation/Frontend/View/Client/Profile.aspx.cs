@@ -45,5 +45,18 @@ namespace KpopZtation.Frontend.View.Client
             Data<Customer> BackendData = Json.Decode<Data<Customer>>(Result);
             ErrorLabel.Text = BackendData.Message;
         }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            Customer = AuthSession.GetUser(Session);
+            string Result = CustomerService.WsDeleteCustomer(Customer.CustomerID.ToString());
+            Data<Customer> BackendData = Json.Decode<Data<Customer>>(Result);
+            ErrorLabel.Text = BackendData.Message;
+            if (BackendData.Succeed)
+            {
+                AuthSession.DeleteSession(Session);
+                Cookie.DeleteCookie(Request, Response);
+            }
+        }
     }
 }

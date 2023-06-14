@@ -12,11 +12,37 @@ namespace KpopZtation.Frontend.View.Template
     public partial class Template : System.Web.UI.MasterPage
     {
 
+        protected void HideAllNav()
+        {
+            ProfileButton.Visible = false;
+            UserButton.Visible = false;
+            TransactionButton.Visible = false;
+            LoginButton.Visible = false;
+            RegisterButton.Visible = false;
+        }
+
         protected void CheckUser()
         {
             if (AuthSession.IsLoggedIn(Session))
             {
-                UsernameLabel.Text = AuthSession.GetUser(Session).CustomerName;
+                Customer User = AuthSession.GetUser(Session);
+                UsernameLabel.Text = User.CustomerName;
+                if (User.CustomerRole == "Admin")
+                {
+                    ProfileButton.Visible = true;
+                    UserButton.Visible = true;
+                    TransactionButton.Visible = true;
+                }
+                else if (User.CustomerRole == "Customer")
+                {
+                    ProfileButton.Visible = true;
+                }
+
+            }
+            else
+            {
+                LoginButton.Visible = true;
+                RegisterButton.Visible = true;
             }
         }
 
@@ -33,8 +59,10 @@ namespace KpopZtation.Frontend.View.Template
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            HideAllNav();
             CheckCookie();
             CheckUser();
+            Middleware.CheckPath(Session, Response);
         }
 
         protected void HomeBtn_Click(object sender, EventArgs e)
@@ -49,7 +77,7 @@ namespace KpopZtation.Frontend.View.Template
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            Redirect.REDIRECT_LOGIN(Response); 
+            Redirect.REDIRECT_LOGIN(Response);
         }
 
         protected void LogoutBtn_Click(Object sender, EventArgs e)
@@ -63,6 +91,16 @@ namespace KpopZtation.Frontend.View.Template
         protected void Profile_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_PROFILE(Response);
+        }
+
+        protected void User_Click(object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_USER(Response);
+        }
+
+        protected void TransactionBtn_Click(object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_TRANSACTION_REPORT(Response);
         }
     }
 }

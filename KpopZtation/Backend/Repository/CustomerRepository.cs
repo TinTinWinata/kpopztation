@@ -10,7 +10,7 @@ namespace KpopZtation.Backend.Repository
     {
         private static Entities db = Database.GetInstance();
 
-        public static List<Customer> GetCustomer()
+        public static List<Customer> GetCustomers()
         {
             return (from customers in db.Customers select customers).ToList<Customer>();
         }
@@ -18,6 +18,14 @@ namespace KpopZtation.Backend.Repository
         public static Customer CreateCustomer(string Name, string Email, string Password, string Gender, string Address)
         {
             return CustomerFactory.CreateCustomer(Name, Email, Password, Gender, Address);
+        }
+
+        public static Customer DeleteCustomer(int ID)
+        {
+            Customer Object = db.Customers.Find(ID);
+            db.Customers.Remove(Object);
+            db.SaveChanges();
+            return Object;
         }
 
         public static Customer UpdateCustomer(string ID, string Name, string Email, string Password, string Gender, string Address)

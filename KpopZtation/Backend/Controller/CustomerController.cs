@@ -22,6 +22,30 @@ namespace KpopZtation.Backend.Controller
                 return true;
             }
         }
+
+        public static Data<List<Customer>> GetAllCustomer()
+        {
+            try
+            {
+                return new Data<List<Customer>>("Getted Customer", CustomerHandler.GetAllCustomer(), true);
+            }catch(Exception err)
+            {
+                return new Data<List<Customer>>(err.Message, null, false);
+            }
+        }
+
+        public static Data<Customer> DeleteCustomer(string ID)
+        {
+            try
+            {
+                int IntegerID = int.Parse(ID);
+                return new Data<Customer>("Success", CustomerHandler.DeleteCustomer(IntegerID), true);
+            }catch(Exception error)
+            {
+                return new Data<Customer>(error.Message, null, false);
+            }
+        }
+
         public static Data<Customer> Update(string ID, string Name, string Email, string Gender, string Address, string Password)
         {
             string Error = CustomerController.IsInputValid(Name, Email, Gender, Address, Password, ID);
