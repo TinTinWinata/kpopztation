@@ -31,9 +31,5 @@ namespace KpopZtation.Backend.Service
         {
             return Json.Encode(ArtistController.CreateArtist(Username, FileImage, Server));
         }
-        public static string WSUpdateArtist(string ID, string Username, FileUpload FileImage, HttpServerUtility Server)
-        {
-            return Json.Encode(ArtistController.UpdateArtist(ID, Username, FileImage, Server));
-        }
     }
 }
