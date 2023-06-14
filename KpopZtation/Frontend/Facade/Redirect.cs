@@ -19,30 +19,39 @@ namespace KpopZtation.Frontend.Facade
                 return URL;
         }
 
-        public static void REDIRECT(HttpResponse Response, string URL)
+        public static void REDIRECT(HttpResponse Response, string URL, string ID)
         {
             string ValidatedURL = VALIDATE_URL(URL);
+            if(ID != "")
+            {
+                ValidatedURL += "?id=" + ID;
+            }
             Response.Redirect(BASE_PATH + ValidatedURL);
         }
 
         public static void REDIRECT_INSERT_ARTIST(HttpResponse Response)
         {
-            REDIRECT(Response, "/Admin/ArtistInsert");
+            REDIRECT(Response, "/Admin/ArtistInsert", "");
         }
 
         public static void REDIRECT_HOME(HttpResponse Response)
         {
-            REDIRECT(Response, "/Guest/Home");
+            REDIRECT(Response, "/Guest/Home", "");
         }
 
         public static void REDIRECT_LOGIN(HttpResponse Response)
         {
-            REDIRECT(Response, "/Guest/Login");
+            REDIRECT(Response, "/Guest/Login", "");
         }
 
         public static void REDIRECT_REGISTER(HttpResponse Response)
         {
-            REDIRECT(Response, "/Guest/Register");
+            REDIRECT(Response, "/Guest/Register", "");
+        }
+
+        public static void REDIRECT_ARTIST_DETAIL(HttpResponse Response, string ID)
+        {
+            REDIRECT(Response, "/Guest/Detail", ID);
         }
     }
 }

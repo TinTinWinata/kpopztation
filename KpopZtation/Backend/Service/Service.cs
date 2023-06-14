@@ -22,7 +22,7 @@ namespace KpopZtation.Backend.Service
         {
             return Json.Encode(ArtistController.GetArtists());
         }
-        public static string WSGetArtistByID(int id)
+        public static string WSGetArtistByID(string id)
         {
             return Json.Encode(ArtistController.FindById(id));
         }
@@ -30,6 +30,11 @@ namespace KpopZtation.Backend.Service
         public static string WSCreateArtist(string Username, FileUpload FileImage, HttpServerUtility Server)
         {
             return Json.Encode(ArtistController.CreateArtist(Username, FileImage, Server));
+        }
+
+        public static string WSUpdateArtist(string ID, string Username, FileUpload FileImage, HttpServerUtility Server)
+        {
+            return Json.Encode(ArtistController.UpdateArtist(ID, Username, FileImage, Server));
         }
     }
 }

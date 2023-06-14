@@ -14,22 +14,27 @@ namespace KpopZtation.Frontend.View.Guest
         public List<Artist> ArtistList = new List<Artist>();
         public List<Album> AlbumList = new List<Album>();
 
+        public void HandleClickItem(object sender, EventArgs e)
+        {
+            string ArtistID = ((LinkButton)sender).CommandArgument.ToString();
+            Redirect.REDIRECT_ARTIST_DETAIL(Response, ArtistID);
+        }
+
         private void FetchArtist()
         {
             string Result = Service.WSGetArtists();
             ArtistList = Json.Decode<List<Artist>>(Result);
-        }
-
-        private void FetchAlbum()
-        {
-            string Result = AlbumService.WSGetAlbums();
-            AlbumList = Json.Decode<List<Album>>(Result);
+            ArtistRepeater.DataSource = ArtistList;
+            ArtistRepeater.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FetchArtist();
-            FetchAlbum();
+            if (Page.IsPostBack == false)
+            {
+                FetchAlbum();
+                FetchArtist();
+            }
         }
 
         public void InsertButton_Click(object sender, EventArgs e)
