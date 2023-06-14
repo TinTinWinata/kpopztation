@@ -42,7 +42,10 @@ CodeBehind="Login.aspx.cs" Inherits="KpopZtation.Frontend.View.Guest.Login" %>
       </div>
     </div>
     <div class="flex items-center justify-between my-2">
-      <div class=""></div>
+      <div class="">
+        <asp:Label ID="CheckboxLabel" runat="server" Text="Remember Me"></asp:Label>
+        <asp:CheckBox ID="RememberMeCheckbox" runat="server" />
+      </div>
 
       <div class="text-sm">
         <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">

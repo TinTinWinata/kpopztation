@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Backend.Service;
 using KpopZtation.Frontend.Facade;
 
 namespace KpopZtation.Frontend.View.Template
@@ -19,24 +20,44 @@ namespace KpopZtation.Frontend.View.Template
             }
         }
 
+        protected void CheckCookie()
+        {
+            if (Cookie.GetCookie(Request) != null)
+            {
+                // Refresh session if there is a cookie data
+                string customer = CustomerService.WSGetCustomerById(Cookie.GetCookieValue(Request));
+                Customer CustomerData = Json.Decode<Customer>(customer);
+                AuthSession.SetUser(Session, CustomerData);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckCookie();
             CheckUser();
         }
 
-        protected void homeBtn_Click(object sender, EventArgs e)
+        protected void HomeBtn_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_HOME(Response);
         }
 
-        protected void registerBtn_Click(object sender, EventArgs e)
+        protected void RegisterBtn_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_REGISTER(Response);
         }
 
-        protected void loginBtn_Click(object sender, EventArgs e)
+        protected void LoginBtn_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_LOGIN(Response); 
+        }
+
+        protected void LogoutBtn_Click(Object sender, EventArgs e)
+        {
+            AuthSession.DeleteSession(Session);
+            Cookie.DeleteCookie(Request, Response);
+
+            Redirect.REDIRECT_LOGIN(Response);
         }
     }
 }

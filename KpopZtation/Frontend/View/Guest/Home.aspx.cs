@@ -13,15 +13,26 @@ namespace KpopZtation.Frontend.View.Guest
     {
         public List<Artist> ArtistList = new List<Artist>();
 
+        public void HandleClickItem(object sender, EventArgs e)
+        {
+            string ArtistID = ((LinkButton)sender).CommandArgument.ToString();
+            Redirect.REDIRECT_ARTIST_DETAIL(Response, ArtistID);
+        }
+
         private void FetchArtist()
         {
             string Result = Service.WSGetArtists();
-            ArtistList =  Json.Decode<List<Artist>>(Result);
+            ArtistList = Json.Decode<List<Artist>>(Result);
+            ArtistRepeater.DataSource = ArtistList;
+            ArtistRepeater.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FetchArtist();
+            if (Page.IsPostBack == false)
+            {
+                FetchArtist();
+            }
         }
 
         public void InsertButton_Click(object sender, EventArgs e)

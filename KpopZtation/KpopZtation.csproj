@@ -83,6 +83,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
+    <Content Include="Frontend\View\Guest\Detail.aspx" />
     <Content Include="Frontend\View\Guest\Home.aspx" />
     <Content Include="Frontend\View\Guest\Login.aspx" />
     <Content Include="Frontend\View\Guest\Register.aspx" />
@@ -121,6 +122,7 @@
     <Compile Include="Backend\Repository\ArtistRepository.cs" />
     <Compile Include="Backend\Repository\Database.cs" />
     <Compile Include="Backend\Repository\CustomerRepository.cs" />
+    <Compile Include="Backend\Service\CustomerService.cs" />
     <Compile Include="Backend\Service\Service.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -128,6 +130,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Facade\Cookie.cs" />
     <Compile Include="Frontend\Facade\Data.cs" />
     <Compile Include="Frontend\Facade\Json.cs" />
     <Compile Include="Frontend\Facade\Redirect.cs" />
@@ -138,6 +141,13 @@
     </Compile>
     <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.designer.cs">
       <DependentUpon>ArtistInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Frontend\View\Guest\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

@@ -22,5 +22,9 @@ namespace KpopZtation.Backend.Handler
             return CustomerRepository.FindByEmail(Email);
         }
 
+        public static Customer FindById(int id)
+        {
+            return CustomerRepository.FindById(id);
+        }
     }
 }
