@@ -35,7 +35,7 @@ namespace KpopZtation.Backend.Repository
 
         public static Cart Checkout(int CustomerID, int AlbumID, int Quantity)
         {
-
+            return null;
         }
             
         public static Cart Remove(int CustomerID, int AlbumID)

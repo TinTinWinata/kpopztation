@@ -28,9 +28,9 @@ namespace KpopZtation.Backend.Handler
             return CartRepository.GetCartsByCustomerIdAndAlbumId(CustomerID, AlbumID);
         }
 
-        public static Cart Checkout()
+        public static Cart Checkout(int CustomerID, int AlbumID, int Quantity)
         {
-            return CartRepository.Checkout();
+            return CartRepository.Checkout(CustomerID, AlbumID, Quantity);
         }
 
         public static Cart Remove(int CustomerID, int AlbumID)

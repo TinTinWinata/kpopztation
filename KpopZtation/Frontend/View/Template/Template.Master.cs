@@ -105,6 +105,8 @@ namespace KpopZtation.Frontend.View.Template
         protected void TransactionHistoryBtn_Click(Object sender, EventArgs e)
         {
 
+        }
+
         protected void Profile_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_PROFILE(Response);

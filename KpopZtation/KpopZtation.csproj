@@ -1349,7 +1349,8 @@
     </Compile>
     <Compile Include="Frontend\View\Guest\AlbumDetail.aspx.designer.cs">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
-    <Compile Include="Frontend\View\Admin\TransactionReport.aspx.cs">
+	</Compile>
+	<Compile Include="Frontend\View\Admin\TransactionReport.aspx.cs">
       <DependentUpon>TransactionReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
