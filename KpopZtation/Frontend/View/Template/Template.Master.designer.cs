@@ -24,6 +24,24 @@ namespace KpopZtation.Frontend.View.Template
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
+        /// cartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cartBtn;
+
+        /// <summary>
+        /// transactionHistoryBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button transactionHistoryBtn;
+
+        /// <summary>
         /// HomeButton control.
         /// </summary>
         /// <remarks>
@@ -51,25 +69,6 @@ namespace KpopZtation.Frontend.View.Template
         protected global::System.Web.UI.WebControls.Button UserButton;
 
         /// <summary>
-        /// cartBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cartBtn;
-
-        /// <summary>
-        /// transactionHistoryBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button transactionHistoryBtn;
-
-        /// <summary>
-        /// logoutBtn control.
         /// RegisterButton control.
         /// </summary>
         /// <remarks>

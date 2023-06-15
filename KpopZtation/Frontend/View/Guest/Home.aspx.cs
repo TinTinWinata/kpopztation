@@ -13,6 +13,7 @@ namespace KpopZtation.Frontend.View.Guest
     {
         public List<Artist> ArtistList = new List<Artist>();
         public List<Album> AlbumList = new List<Album>();
+        public Customer User;
 
         public void HandleClickItem(object sender, EventArgs e)
         {
@@ -28,25 +29,13 @@ namespace KpopZtation.Frontend.View.Guest
             ArtistRepeater.DataBind();
         }
 
-        public void HandleDeleteBtn(object sender, EventArgs e)
-        {
-            string ID = ((LinkButton)sender).CommandArgument.ToString();
-            string Result = Service.WSRemoveArtist(ID);
-            Data<Artist> BackendData = Json.Decode<Data<Artist>>(Result);
-            if (BackendData.Succeed)
-            {
-                FetchArtist();
-            }
-            else
-            {
-                ErrorLabel.Text = BackendData.Message;
-            }
-        }
+     
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack == false)
             {
+                User = AuthSession.GetUser(Session);
                 FetchArtist();
             }
         }
@@ -59,6 +48,22 @@ namespace KpopZtation.Frontend.View.Guest
         public void InsertAlbumButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Frontend/View/Admin/AlbumInsert.aspx?id=" + 1);
+        }
+
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            string ID = ((LinkButton)sender).CommandArgument.ToString();
+            string Result = Service.WSRemoveArtist(ID);
+            Data<Artist> BackendData = Json.Decode<Data<Artist>>(Result);
+            if (BackendData.Succeed)
+            {
+                FetchArtist();
+            }
+            else
+            {
+                ErrorLabel.Text = BackendData.Message;
+            }
         }
     }
 }

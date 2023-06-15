@@ -57,7 +57,7 @@ namespace KpopZtation.Frontend.View.Guest
         {
             // get album id from url
             string albumId = Request.QueryString["id"];
-
+                
             // Get Data
             string quantity = AlbumQuantityDetail.Text;
             int customerId = AuthSession.GetUser(Session).CustomerID;
@@ -68,7 +68,8 @@ namespace KpopZtation.Frontend.View.Guest
 
             if (BackendData.Succeed)
             {
-                Redirect.REDIRECT_ARTIST_DETAIL(Response, BackendData.Object.ArtistID.ToString());
+                Redirect.REDIRECT_HOME(Response);
+                //Redirect.REDIRECT_ARTIST_DETAIL(Response, BackendData.Object.ArtistID.ToString());
             }
             else
             {

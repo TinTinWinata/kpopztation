@@ -6,7 +6,7 @@
     <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 flex flex-col gap-2">
 
         <%-- Profile Name Input --%>
-        <div>
+        <%--<div>--%>
             <asp:Label CssClass="block text-sm font-medium text-gray-700" ID="AlbumLabel" runat="server" Text="Profile Name"></asp:Label>
             <div class="mt-1">
                 <asp:TextBox

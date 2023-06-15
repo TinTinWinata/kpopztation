@@ -13,8 +13,13 @@
         }
     </script>
 
-    <asp:Button ID="InsertButton" CssClass="bg-red-300" OnClick="InsertButton_Click" runat="server" Text="Insert" />
 
+    <% if (User != null && User.CustomerRole == "Admin")
+        {
+    %>
+
+    <asp:Button ID="InsertButton" CssClass="bg-red-300" OnClick="InsertButton_Click" runat="server" Text="Insert" />
+    <%} %>
     <asp:Repeater ID="ArtistRepeater" runat="server">
         <HeaderTemplate>
             <table class="min-w-full divide-y divide-gray-200">
@@ -46,14 +51,16 @@
                             </div>
                         </div>
                     </td>
-
+                    <% if (User != null && User.CustomerRole == "Admin")
+                        {%>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a href="/Frontend/View/Admin/ArtistUpdate.aspx?id=<%#Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <asp:LinkButton OnClick="HandleDeleteBtn" CommandArgument='<%# Eval("ArtistID") %>' runat="server" CssClass="text-indigo-600 hover:text-indigo-900">Remove</asp:LinkButton>
+                        <asp:LinkButton OnClick="DeleteButton_Click" ID="LinkButton1" CommandArgument='<%# Eval("ArtistID") %>' runat="server">Delete</asp:LinkButton>
                     </td>
+                    <%} %>
                 </tr>
             </tbody>
         </ItemTemplate>

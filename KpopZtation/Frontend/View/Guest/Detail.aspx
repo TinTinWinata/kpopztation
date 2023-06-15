@@ -51,15 +51,19 @@
         <div class="flex flex-col gap-4">
             <div></div>
             <div class="flex justify-end">
-                <asp:Button 
-                    CssClass="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
-                    ID="InsertAlbumButton" 
-                    runat="server" 
+
+                <% if (User != null && User.CustomerRole == "Admin")
+                    {%>
+                <asp:Button
+                    CssClass="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                    ID="InsertAlbumButton"
+                    runat="server"
                     OnClick="InsertAlbumButton_Click"
                     Text="Insert" />
+                <%} %>
             </div>
 
-            
+
             <asp:Repeater ID="AlbumRepeater" runat="server">
                 <HeaderTemplate>
                     <table class="min-w-full divide-y divide-gray-200">
@@ -101,6 +105,9 @@
                                     <%# Eval("AlbumDescription") %>
                                 </div>
                             </td>
+                            <% if (User != null && User.CustomerRole == "Admin")
+                                {%>
+
                             <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                 <a href="/Frontend/View/Admin/AlbumUpdate.aspx?id=<%#Eval("AlbumID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                             </td>
@@ -108,6 +115,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                 <asp:LinkButton OnClick="DeleteAlbumButton_Click" CommandArgument='<%# Eval("AlbumID") %>' runat="server" CssClass="text-indigo-600 hover:text-indigo-900">Remove</asp:LinkButton>
                             </td>
+                            <%} %>
                         </tr>
                     </tbody>
                 </ItemTemplate>

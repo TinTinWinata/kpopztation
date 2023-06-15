@@ -12,11 +12,13 @@ namespace KpopZtation.Frontend.View.Guest
     public partial class Detail : System.Web.UI.Page
     {
 
+        public Customer User;
         public Artist Artist;
         public List<Album> AlbumList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            User = AuthSession.GetUser(Session);
             FetchArtist();
             FetchAlbums();
         }

@@ -11,10 +11,11 @@ namespace KpopZtation.Frontend.Facade
         public static void CheckWeb(string Path, HttpResponse Response, HttpSessionState Session)
         {
             Customer User = AuthSession.GetUser(Session);
-            if(User == null && (Path.Contains("Admin") || Path.Contains("Client")))
+            if (User == null && (Path.Contains("Admin") || Path.Contains("Client")))
             {
                 Redirect.REDIRECT_HOME(Response);
-            }else if (Path.Contains("Admin") && User.CustomerRole != "Admin")
+            }
+            else if (Path.Contains("Admin") && User.CustomerRole != "Admin")
             {
                 Redirect.REDIRECT_HOME(Response);
             }

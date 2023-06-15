@@ -14,7 +14,7 @@ namespace KpopZtation.Frontend.View.Admin
 
         private void SetCrystalReport()
         {
-            Report.CrystalReport Report = new Report.CrystalReport();
+            Report.CrystalReport1 Report = new Report.CrystalReport1();
             CrystalReportViewer1.ReportSource = Report;
             Dataset.DataSet Data = GetData();
             Report.SetDataSource(Data);

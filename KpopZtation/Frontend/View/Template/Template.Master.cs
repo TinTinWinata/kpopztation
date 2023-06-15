@@ -35,6 +35,8 @@ namespace KpopZtation.Frontend.View.Template
                 }
                 else if (User.CustomerRole == "Customer")
                 {
+                    transactionHistoryBtn.Visible = true;
+                    cartBtn.Visible = true;
                     ProfileButton.Visible = true;
                 }
 
@@ -61,8 +63,7 @@ namespace KpopZtation.Frontend.View.Template
         {
             if (AuthSession.IsLoggedIn(Session))
             {
-                cartBtn.Visible = true;
-                transactionHistoryBtn.Visible = true;
+      
             }
         }
 
@@ -112,12 +113,13 @@ namespace KpopZtation.Frontend.View.Template
             Redirect.REDIRECT_PROFILE(Response);
         }
 
-        protected void User_Click(object sender, EventArgs e)
+
+        protected void UserButton_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_USER(Response);
         }
 
-        protected void TransactionBtn_Click(object sender, EventArgs e)
+        protected void TransactionButton_Click(object sender, EventArgs e)
         {
             Redirect.REDIRECT_TRANSACTION_REPORT(Response);
         }

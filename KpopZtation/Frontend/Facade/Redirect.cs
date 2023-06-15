@@ -81,7 +81,7 @@ namespace KpopZtation.Frontend.Facade
 
         public static void REDIRECT_TRANSACTION_HISTORY(HttpResponse Response)
         {
-            REDIRECT(Response, "/Client/TransactionHistory", "");
+            REDIRECT(Response, "/Client/TransactionHistoryPage", "");
         }
     }
 }

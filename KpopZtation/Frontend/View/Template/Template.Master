@@ -43,17 +43,16 @@
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
                                 <asp:Button OnClick="LoginBtn_Click" Text="Login" runat="server" ID="LoginButton" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
-                                <asp:Button OnClick="User_Click" Text="User" runat="server" ID="UserButton" Class="border-indigo-500 text-gray-900
-                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="UserButton_Click" Class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" ID ="UserButton" runat="server" Text="Users" />
                                 <asp:Button OnClick="RegisterBtn_Click" Text="Register" runat="server" ID="RegisterButton" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
-                                <asp:Button OnClick="TransactionBtn_Click" Text="Transaction" runat="server" ID="TransactionButton" Class="border-indigo-500 text-gray-900
-                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="TransactionButton_Click" ID="TransactionButton" runat="server" Text="Transaction"   Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"/>
                                 <% if (Session["user"] != null)
                                     { %>
                                 <asp:Button OnClick="LogoutBtn_Click" Text="Logout" runat="server" ID="LogoutButton" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
-                                <asp:Button OnClick="Profile_Click" Text="Profile" runat="server" ID="ProfileButton" Class="border-indigo-500 text-gray-900
+                                <asp:Button OnClick="Profile_Click" ID="ProfileButton" runat="server" Text="Profile" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
                                 <% } %>
                             </form>
