@@ -47,6 +47,21 @@
                                 <% if (Session["user"] != null)
                                 { %>
                                 <asp:Button OnClick="LogoutBtn_Click" Text="Logout" runat="server" ID="logoutBtn" Class="border-indigo-500 text-gray-900
+                                <asp:Button OnClick="HomeBtn_Click" Text="Home" runat="server" ID="HomeButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="LoginBtn_Click" Text="Login" runat="server" ID="LoginButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="User_Click" Text="User" runat="server" ID="UserButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="RegisterBtn_Click" Text="Register" runat="server" ID="RegisterButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="TransactionBtn_Click" Text="Transaction" runat="server" ID="TransactionButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <% if (Session["user"] != null)
+                                    { %>
+                                <asp:Button OnClick="LogoutBtn_Click" Text="Logout" runat="server" ID="LogoutButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="Profile_Click" Text="Profile" runat="server" ID="ProfileButton" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
                                 <% } %>
                             </form>

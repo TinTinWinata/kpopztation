@@ -38,5 +38,13 @@ namespace KpopZtation.Backend.Repository
             return Object;
         }
 
+        public static Artist Remove(int ID)
+        {
+            Artist Object = db.Artists.Find(ID);
+            db.Artists.Remove(Object);
+            db.SaveChanges();
+            return Object;
+        }
+
     }
 }

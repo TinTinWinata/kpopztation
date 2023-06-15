@@ -36,5 +36,10 @@ namespace KpopZtation.Backend.Service
         {
             return Json.Encode(ArtistController.UpdateArtist(ID, Username, FileImage, Server));
         }
+
+        public static string WSRemoveArtist(string ID)
+        {
+            return Json.Encode(ArtistController.RemoveArtist(ID));
+        }
     }
 }

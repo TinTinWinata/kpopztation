@@ -19,56 +19,12 @@ namespace KpopZtation.Backend.Controller
             return new Data<Customer>("Wrong credentials or User not found!", Object, false);
         }
 
-        public static bool IsExistEmail(string Email)
-        {
-            Customer customer = CustomerHandler.FindByEmail(Email);
-            if(customer == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+
+
 
         public static Data<Customer> Register(string Name, string Email, string Gender, string Address, string Password)
         {
-            string Error = string.Empty;
-
-            if(string.IsNullOrEmpty(Name))
-            {
-                Error = "Name is empty!";
-            }else if (string.IsNullOrEmpty(Email))
-            {
-                Error = "Email is empty!";
-            }else if (string.IsNullOrEmpty(Gender))
-            {
-                Error = "Gender is empty!";
-            }
-            else if (string.IsNullOrEmpty(Address))
-            {
-                Error = "Address is empty!";
-            }else if (string.IsNullOrEmpty(Password))
-            {
-                Error = "Password is empty!";
-            }
-            else if(Name.Length < 5 || Name.Length > 50)
-            {
-                Error = "Name must be between 5 - 50 characters";
-            }else if (IsExistEmail(Email))
-            {
-                Error = "Email already used by someone";
-            }else if(!Address.EndsWith("Street"))
-            {
-                Error = "Address must ends with street";
-            }else if (!Facade.Facade.CheckAlphanumeric(Password))
-            {
-                Error = "Password must be alphanumeric!";
-            }
-
-
-
+            string Error = CustomerController.IsInputValid(Name, Email, Gender, Address, Password, "");
 
             if (Error != string.Empty)
             {

@@ -52,7 +52,7 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="/Frontend/View/Admin/ArtistUpdate.aspx?id=<%# Eval("ArtistID") %>" class="text-indigo-600 hover:text-indigo-900">Remove</a>
+                        <asp:LinkButton OnClick="HandleDeleteBtn" CommandArgument='<%# Eval("ArtistID") %>' runat="server" CssClass="text-indigo-600 hover:text-indigo-900">Remove</asp:LinkButton>
                     </td>
                 </tr>
             </tbody>
@@ -61,4 +61,9 @@
             </table>
         </FooterTemplate>
     </asp:Repeater>
+    <asp:Label
+        CssClass="block text-sm font-medium text-red-400"
+        ID="ErrorLabel"
+        runat="server"
+        Text=""></asp:Label>
 </asp:Content>

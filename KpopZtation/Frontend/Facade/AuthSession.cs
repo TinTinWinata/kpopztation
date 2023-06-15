@@ -15,7 +15,8 @@ namespace KpopZtation.Frontend.Facade
         }
         public static Customer GetUser(HttpSessionState Session)
         {
-            return (Customer) Session[USER_KEY];
+            Customer Object = (Customer)Session[USER_KEY];
+            return Object;
         }
         public static bool IsLoggedIn(HttpSessionState Session)
         {

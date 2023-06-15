@@ -44,6 +44,22 @@ namespace KpopZtation.Frontend.Facade
             REDIRECT(Response, "/Guest/Login", "");
         }
 
+        public static void REDIRECT_USER(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Admin/User", "");
+        }
+
+        public static void REDIRECT_TRANSACTION_REPORT(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Admin/TransactionReport", "");
+        }
+
+
+        public static void REDIRECT_PROFILE(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Client/Profile", "");
+        }
+
         public static void REDIRECT_REGISTER(HttpResponse Response)
         {
             REDIRECT(Response, "/Guest/Register", "");

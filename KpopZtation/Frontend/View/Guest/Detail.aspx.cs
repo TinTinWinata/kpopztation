@@ -25,7 +25,15 @@ namespace KpopZtation.Frontend.View.Guest
         {
             string ID = Request.QueryString["id"];
             string Result = Service.WSGetArtistByID(ID);
-            Artist = Json.Decode<Artist>(Result);
+            Data<Artist> BackendData = Json.Decode<Data<Artist>>(Result);
+            if (BackendData.Succeed)
+            {
+                Artist = BackendData.Object;
+            }
+            else
+            {
+                Redirect.REDIRECT_HOME(Response);
+            }
         }
 
         private void FetchAlbums()
