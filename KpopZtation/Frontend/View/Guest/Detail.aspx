@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        function handleClick(element) {
+            var albumId = element.getAttribute('data-album-id');
+            window.location.href = 'AlbumDetail.aspx?id=' + albumId;
+        }
+    </script>
     <div>
         <div>
             <img class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
@@ -40,6 +46,75 @@
                 <h1 class="text-2xl font-bold text-gray-900 truncate"><%=Artist.ArtistName %>
                 </h1>
             </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <div></div>
+            <div class="flex justify-end">
+                <asp:Button 
+                    CssClass="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
+                    ID="InsertAlbumButton" 
+                    runat="server" 
+                    OnClick="InsertAlbumButton_Click"
+                    Text="Insert" />
+            </div>
+
+            
+            <asp:Repeater ID="AlbumRepeater" runat="server">
+                <HeaderTemplate>
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Album Name
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Album Price
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Album description
+                                </th>
+                                <th scope="col" colspan="3" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action
+                                </th>
+                            </tr>
+                        </thead>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr onclick="handleClick(this)" class="" data-album-id='<%# Eval("AlbumID") %>'>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex justify-center items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <img class="h-10 w-10 rounded-full" src=" <%# Eval("AlbumImage") %>" alt="">
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">
+                                            <%# Eval("AlbumName") %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-sm text-center font-medium text-gray-900">
+                                    <%# Eval("AlbumPrice") %>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-sm text-center font-medium text-gray-900">
+                                    <%# Eval("AlbumDescription") %>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                <a href="/Frontend/View/Admin/AlbumUpdate.aspx?id=<%#Eval("AlbumID") %>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            </td>
+
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                <asp:LinkButton OnClick="DeleteAlbumButton_Click" CommandArgument='<%# Eval("AlbumID") %>' runat="server" CssClass="text-indigo-600 hover:text-indigo-900">Remove</asp:LinkButton>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
         </div>
     </div>
 </asp:Content>

@@ -9,6 +9,11 @@ namespace KpopZtation.Backend.Controller
 {
     public class TransactionController
     {
+        public static List<TransactionHeader> GetTransactionByCustomerId(int CustomerID)
+        {
+            return TransactionHandler.GetTransactionHeaderByCustomerId(CustomerID);
+        }
+
         public static Data<List<TransactionHeader>> GetAllTransaction()
         {
             return new Data<List<TransactionHeader>>("Success", TransactionHandler.GetAllTransaction(),true);

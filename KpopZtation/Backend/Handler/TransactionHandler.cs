@@ -8,6 +8,10 @@ namespace KpopZtation.Backend.Handler
 {
     public class TransactionHandler
     {
+        public static List<TransactionHeader> GetTransactionHeaderByCustomerId(int CustomerID)
+        {
+            return TransactionRepository.GetTransactionHeaderByCustomerId(CustomerID);
+        }
         public static List<TransactionHeader> GetAllTransaction()
         {
             return TransactionRepository.GetAllTransaction();

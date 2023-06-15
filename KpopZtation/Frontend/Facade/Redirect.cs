@@ -69,5 +69,19 @@ namespace KpopZtation.Frontend.Facade
         {
             REDIRECT(Response, "/Guest/Detail", ID);
         }
+
+        public static void REDIRECT_INSERT_ALBUM(HttpResponse Response, string ID)
+        {
+            REDIRECT(Response, "/Admin/AlbumInsert", ID);
+        }
+        public static void REDIRECT_CART(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Client/CartView", "");
+        }
+
+        public static void REDIRECT_TRANSACTION_HISTORY(HttpResponse Response)
+        {
+            REDIRECT(Response, "/Client/TransactionHistory", "");
+        }
     }
 }

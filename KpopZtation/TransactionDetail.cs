@@ -14,7 +14,7 @@ namespace KpopZtation
     
     public partial class TransactionDetail
     {
-        public Nullable<int> TransactionID { get; set; }
+        public int TransactionID { get; set; }
         public int AlbumID { get; set; }
         public int Qty { get; set; }
     

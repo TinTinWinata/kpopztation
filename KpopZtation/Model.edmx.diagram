@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="60d3b62becba4241ae3f98fd4061ed3e" Name="Diagram1">
+      <Diagram DiagramId="d9e0fcf3b69c49cc8baadfff5790c747" Name="Diagram1">
         <EntityTypeShape EntityType="DatabaseModel.Album" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Artist" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.FK__Album__ArtistID__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Cart__AlbumID__3F466844" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Transacti__Album__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Cart__CustomerID__4316F928" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Transacti__Custo__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Transacti__Trans__45F365D3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Album__ArtistID__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Cart__AlbumID__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Transacti__Album__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Cart__CustomerID__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Transacti__Custo__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Transacti__Trans__14270015" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
