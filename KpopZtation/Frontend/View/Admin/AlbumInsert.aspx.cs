@@ -13,7 +13,8 @@ namespace KpopZtation.Frontend.View.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (AuthSession.GetUser(Session) == null && Cookie.GetCookie(Request) == null) Redirect.REDIRECT_LOGIN(Response);
+            //else if (AuthSession.GetUser(Session).CustomerRole != "Admin") Redirect.REDIRECT_HOME(Response);
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
         {

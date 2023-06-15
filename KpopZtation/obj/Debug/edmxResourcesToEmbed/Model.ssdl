@@ -25,7 +25,7 @@
       <PropertyRef Name="CustomerID" />
       <PropertyRef Name="AlbumID" />
     </Key>
-    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
     <Property Name="AlbumID" Type="int" Nullable="false" />
     <Property Name="Qty" Type="int" />
   </EntityType>
@@ -41,14 +41,12 @@
     <Property Name="CustomerAddress" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="CustomerRole" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABASE.MDF.dbo.TransactionDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TransactionDetail">
     <Key>
+      <PropertyRef Name="TransactionID" />
       <PropertyRef Name="AlbumID" />
-      <PropertyRef Name="Qty" />
     </Key>
-    <Property Name="TransactionID" Type="int" />
+    <Property Name="TransactionID" Type="int" Nullable="false" />
     <Property Name="AlbumID" Type="int" Nullable="false" />
     <Property Name="Qty" Type="int" Nullable="false" />
   </EntityType>
@@ -60,7 +58,7 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
     <Property Name="TransactionDate" Type="date" Nullable="false" />
     <Property Name="CustomerID" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Album__ArtistID__3B75D760">
+  <Association Name="FK__Album__ArtistID__09A971A2">
     <End Role="Artist" Type="Self.Artist" Multiplicity="1" />
     <End Role="Album" Type="Self.Album" Multiplicity="*" />
     <ReferentialConstraint>
@@ -72,7 +70,7 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cart__AlbumID__3F466844">
+  <Association Name="FK__Cart__AlbumID__0C85DE4D">
     <End Role="Album" Type="Self.Album" Multiplicity="1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
     <ReferentialConstraint>
@@ -84,7 +82,7 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cart__CustomerID__4316F928">
+  <Association Name="FK__Cart__CustomerID__0D7A0286">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
     <ReferentialConstraint>
@@ -96,7 +94,7 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Album__37A5467C">
+  <Association Name="FK__Transacti__Album__1332DBDC">
     <End Role="Album" Type="Self.Album" Multiplicity="1" />
     <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -108,7 +106,7 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Custo__46E78A0C">
+  <Association Name="FK__Transacti__Custo__10566F31">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="*" />
     <ReferentialConstraint>
@@ -120,8 +118,8 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Trans__45F365D3">
-    <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="0..1" />
+  <Association Name="FK__Transacti__Trans__14270015">
+    <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="1" />
     <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TransactionHeader">
@@ -137,35 +135,29 @@ warning 6002: The table/view 'E:\GITHUB\KPOPZTATION\KPOPZTATION\APP_DATA\DATABAS
     <EntitySet Name="Artist" EntityType="Self.Artist" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionDetail" EntityType="Self.TransactionDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TransactionHeader" EntityType="Self.TransactionHeader" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TransactionDetail" EntityType="Self.TransactionDetail" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TransactionDetail].[TransactionID] AS [TransactionID], 
-    [TransactionDetail].[AlbumID] AS [AlbumID], 
-    [TransactionDetail].[Qty] AS [Qty]
-    FROM [dbo].[TransactionDetail] AS [TransactionDetail]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK__Album__ArtistID__3B75D760" Association="Self.FK__Album__ArtistID__3B75D760">
+    <AssociationSet Name="FK__Album__ArtistID__09A971A2" Association="Self.FK__Album__ArtistID__09A971A2">
       <End Role="Artist" EntitySet="Artist" />
       <End Role="Album" EntitySet="Album" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cart__AlbumID__3F466844" Association="Self.FK__Cart__AlbumID__3F466844">
+    <AssociationSet Name="FK__Cart__AlbumID__0C85DE4D" Association="Self.FK__Cart__AlbumID__0C85DE4D">
       <End Role="Album" EntitySet="Album" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cart__CustomerID__4316F928" Association="Self.FK__Cart__CustomerID__4316F928">
+    <AssociationSet Name="FK__Cart__CustomerID__0D7A0286" Association="Self.FK__Cart__CustomerID__0D7A0286">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Album__37A5467C" Association="Self.FK__Transacti__Album__37A5467C">
+    <AssociationSet Name="FK__Transacti__Album__1332DBDC" Association="Self.FK__Transacti__Album__1332DBDC">
       <End Role="Album" EntitySet="Album" />
       <End Role="TransactionDetail" EntitySet="TransactionDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Custo__46E78A0C" Association="Self.FK__Transacti__Custo__46E78A0C">
+    <AssociationSet Name="FK__Transacti__Custo__10566F31" Association="Self.FK__Transacti__Custo__10566F31">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="TransactionHeader" EntitySet="TransactionHeader" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Trans__45F365D3" Association="Self.FK__Transacti__Trans__45F365D3">
+    <AssociationSet Name="FK__Transacti__Trans__14270015" Association="Self.FK__Transacti__Trans__14270015">
       <End Role="TransactionHeader" EntitySet="TransactionHeader" />
       <End Role="TransactionDetail" EntitySet="TransactionDetail" />
     </AssociationSet>

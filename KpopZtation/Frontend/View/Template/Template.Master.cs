@@ -31,10 +31,20 @@ namespace KpopZtation.Frontend.View.Template
             }
         }
 
+        protected void SettingVisibilityButton()
+        {
+            if (AuthSession.IsLoggedIn(Session))
+            {
+                cartBtn.Visible = true;
+                transactionHistoryBtn.Visible = true;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckCookie();
             CheckUser();
+            SettingVisibilityButton();
         }
 
         protected void HomeBtn_Click(object sender, EventArgs e)
@@ -58,6 +68,16 @@ namespace KpopZtation.Frontend.View.Template
             Cookie.DeleteCookie(Request, Response);
 
             Redirect.REDIRECT_LOGIN(Response);
+        }
+
+        protected void CartBtn_Click(Object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_CART(Response);
+        }
+
+        protected void TransactionHistoryBtn_Click(Object sender, EventArgs e)
+        {
+            Redirect.REDIRECT_TRANSACTION_HISTORY(Response);
         }
     }
 }

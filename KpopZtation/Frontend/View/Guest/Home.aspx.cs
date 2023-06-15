@@ -32,7 +32,6 @@ namespace KpopZtation.Frontend.View.Guest
         {
             if (Page.IsPostBack == false)
             {
-                FetchAlbum();
                 FetchArtist();
             }
         }
