@@ -83,8 +83,12 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\View\Admin\AlbumInsert.aspx" />
+    <Content Include="Frontend\View\Admin\AlbumUpdate.aspx" />
     <Content Include="Frontend\View\Admin\ArtistInsert.aspx" />
     <Content Include="Frontend\View\Admin\ArtistUpdate.aspx" />
+    <Content Include="Frontend\View\Client\CartView.aspx" />
+    <Content Include="Frontend\View\Client\TransactionHistory.aspx" />
+    <Content Include="Frontend\View\Guest\AlbumDetail.aspx" />
     <Content Include="Frontend\View\Guest\Detail.aspx" />
     <Content Include="Frontend\View\Guest\Home.aspx" />
     <Content Include="Frontend\View\Guest\Login.aspx" />
@@ -112,6 +116,7 @@
     <Compile Include="Backend\Controller\AlbumController.cs" />
     <Compile Include="Backend\Controller\ArtistController.cs" />
     <Compile Include="Backend\Controller\AuthController.cs" />
+    <Compile Include="Backend\Controller\CartController.cs" />
     <Compile Include="Backend\Controller\CustomerController.cs" />
     <Compile Include="Backend\Facade\Data.cs" />
     <Compile Include="Backend\Facade\Facade.cs" />
@@ -119,16 +124,20 @@
     <Compile Include="Backend\Facade\Json.cs" />
     <Compile Include="Backend\Factory\AlbumFactory.cs" />
     <Compile Include="Backend\Factory\ArtistFactory.cs" />
+    <Compile Include="Backend\Factory\CartFactory.cs" />
     <Compile Include="Backend\Factory\CustomerFactory.cs" />
     <Compile Include="Backend\Handler\AlbumHandler.cs" />
     <Compile Include="Backend\Handler\ArtistHandler.cs" />
     <Compile Include="Backend\Handler\AuthenticationHandler.cs" />
+    <Compile Include="Backend\Handler\CartHandler.cs" />
     <Compile Include="Backend\Handler\CustomerHandler.cs" />
     <Compile Include="Backend\Repository\AlbumRepository.cs" />
     <Compile Include="Backend\Repository\ArtistRepository.cs" />
+    <Compile Include="Backend\Repository\CartRepository.cs" />
     <Compile Include="Backend\Repository\Database.cs" />
     <Compile Include="Backend\Repository\CustomerRepository.cs" />
     <Compile Include="Backend\Service\AlbumService.cs" />
+    <Compile Include="Backend\Service\CartService.cs" />
     <Compile Include="Backend\Service\CustomerService.cs" />
     <Compile Include="Backend\Service\Service.cs" />
     <Compile Include="Cart.cs">
@@ -149,6 +158,13 @@
     <Compile Include="Frontend\View\Admin\AlbumInsert.aspx.designer.cs">
       <DependentUpon>AlbumInsert.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\View\Admin\AlbumUpdate.aspx.cs">
+      <DependentUpon>AlbumUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Admin\AlbumUpdate.aspx.designer.cs">
+      <DependentUpon>AlbumUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\View\Admin\ArtistInsert.aspx.cs">
       <DependentUpon>ArtistInsert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +178,27 @@
     </Compile>
     <Compile Include="Frontend\View\Admin\ArtistUpdate.aspx.designer.cs">
       <DependentUpon>ArtistUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Client\CartView.aspx.cs">
+      <DependentUpon>CartView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Client\CartView.aspx.designer.cs">
+      <DependentUpon>CartView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Client\TransactionHistory.aspx.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Client\TransactionHistory.aspx.designer.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\AlbumDetail.aspx.cs">
+      <DependentUpon>AlbumDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\View\Guest\AlbumDetail.aspx.designer.cs">
+      <DependentUpon>AlbumDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Frontend\View\Guest\Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
