@@ -52,6 +52,11 @@ namespace KpopZtation.Backend.Repository
             return Object;
         }
 
+        //public static Album DeleteByArtistID(int ID)
+        //{
+
+        //}
+
         public static Album Create(int ArtistId, string Name, string Description, string Price, string Stock, string ImagePath)
         {
             return AlbumFactory.Create(ArtistId, Name, Description, Price, Stock, ImagePath);

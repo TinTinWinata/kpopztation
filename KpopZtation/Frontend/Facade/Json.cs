@@ -10,7 +10,10 @@ namespace KpopZtation.Frontend.Facade
     {
         public static string Encode(object Data)
         {
-            return JsonConvert.SerializeObject(Data);
+            return JsonConvert.SerializeObject(Data, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
 
         public static T Decode<T>(string String)

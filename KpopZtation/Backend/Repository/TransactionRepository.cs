@@ -1,4 +1,4 @@
-﻿using KpopZtation.Backend.Factory;
+using KpopZtation.Backend.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +38,10 @@ namespace KpopZtation.Backend.Repository
         public static TransactionDetail CreateTransactionDetail(int TransactionID, int AlbumID, int Quantity)
         {
             return TransactionDetailFactory.Create(TransactionID, AlbumID, Quantity);
+        }
+        public static List<TransactionHeader> GetAllTransaction()
+        {
+            return (from transactions in db.TransactionHeaders select transactions).ToList<TransactionHeader>();  
         }
     }
 }

@@ -13,5 +13,9 @@ namespace KpopZtation.Backend.Service
         {
             return Json.Encode(TransactionController.GetTransactionByCustomerId(CustomerID));
         }
+        public static string WSGetAllTransaction()
+        {
+            return Json.Encode(TransactionController.GetAllTransaction());
+        }
     }
 }

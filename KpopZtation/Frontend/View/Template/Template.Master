@@ -34,19 +34,26 @@
                         </div>
                         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                             <form class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                                <asp:Button OnClick="HomeBtn_Click" Text="Home" runat="server" ID="homeBtn" Class="border-indigo-500 text-gray-900
-                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
-                                <asp:Button OnClick="LoginBtn_Click" Text="Login" runat="server" ID="loginBtn" Class="border-indigo-500 text-gray-900
-                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
-                                <asp:Button OnClick="RegisterBtn_Click" Text="Register" runat="server" ID="registerBtn" Class="border-indigo-500 text-gray-900
-                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+
                                 <asp:Button OnClick="CartBtn_Click" Text="Cart" runat="server" ID="cartBtn" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" Visible= "false" />
                                 <asp:Button OnClick="TransactionHistoryBtn_Click" Text="Transaction History" runat="server" ID="transactionHistoryBtn" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" Visible= "false" />
+                                <asp:Button OnClick="HomeBtn_Click" Text="Home" runat="server" ID="HomeButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="LoginBtn_Click" Text="Login" runat="server" ID="LoginButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="User_Click" Text="User" runat="server" ID="UserButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="RegisterBtn_Click" Text="Register" runat="server" ID="RegisterButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="TransactionBtn_Click" Text="Transaction" runat="server" ID="TransactionButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
                                 <% if (Session["user"] != null)
-                                { %>
-                                <asp:Button OnClick="LogoutBtn_Click" Text="Logout" runat="server" ID="logoutBtn" Class="border-indigo-500 text-gray-900
+                                    { %>
+                                <asp:Button OnClick="LogoutBtn_Click" Text="Logout" runat="server" ID="LogoutButton" Class="border-indigo-500 text-gray-900
+                              inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
+                                <asp:Button OnClick="Profile_Click" Text="Profile" runat="server" ID="ProfileButton" Class="border-indigo-500 text-gray-900
                               inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" />
                                 <% } %>
                             </form>
